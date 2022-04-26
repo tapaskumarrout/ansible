@@ -22,7 +22,7 @@
 
 - name: Copy Source File
   ansible.builtin.copy:
-    src: roboshop.config
+    src: roboshop.conf
     dest: /etc/ngnix/default.d/roboshop.conf
 
 - name: Starrt Nginx Service
