@@ -4,11 +4,6 @@
     state: installed
 
 - name: Download and Extract Frontend
-  ansible.builtin.unarchive:
-    src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
-    dest: /tmp
-    remote_src: yes
-- name: Download and Extract Frontend
   include_role:
     name: common
     tasks_from: download
