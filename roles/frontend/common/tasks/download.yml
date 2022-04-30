@@ -5,6 +5,6 @@
 #		remote_src: yes
 - name: Download and Extract Frontend
 	ansible.builtin.unarchieve:
-		src: https:/github.com/roboshop-devops-project/frontend/archieve/maon.zip
+		src: https:/github.com/roboshop-devops-project/frontend/archieve/main.zip
 		dest: /tmp
 		remote_src: yes
