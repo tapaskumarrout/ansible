@@ -1,5 +1,5 @@
 - name: Download and Extract "{{COMP}}"
-	ansible.builtin.unarchieve:
-		src: https:/github.com/roboshop-devops-project/"{{COMP}}"/archieve/mian.zip
+	ansible.builtin.unarchive:
+		src: https://github.com/roboshop-devops-project/"{{COMP}}"/archive/main.zip
 		dest: /tmp
 		remote_src: yes
