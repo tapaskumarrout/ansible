@@ -1,10 +1,5 @@
-#- name: Download and Extract {{COMPONENT}}
-#	ansible.builtin.unarchieve:
-#		src: https:/github.com/roboshop-devops-project/{{COMPONENT}}/archieve/mian.zip
-#		dest: /tmp
-#		remote_src: yes
-- name: Download and Extract Frontend
+- name: Download and Extract "{{COMP}}"
 	ansible.builtin.unarchieve:
-		src: https:/github.com/roboshop-devops-project/frontend/archieve/main.zip
+		src: https:/github.com/roboshop-devops-project/"{{COMP}}"/archieve/mian.zip
 		dest: /tmp
 		remote_src: yes
