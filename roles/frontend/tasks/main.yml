@@ -8,6 +8,10 @@
     src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
     dest: /tmp
     remote_src: yes
+- name: Download and Extract Frontend
+  include_role:
+    name: common
+    tasks_from: download
 
 - name: Cleanuop Old HTML Content
   ansible.builtin.file:
