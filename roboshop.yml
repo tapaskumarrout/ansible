@@ -1,11 +1,11 @@
-#- name: setup frontend component
-#  hosts: frontend
-#  become: yes
-#  roles:
-#    - frontend
-
 - name: setup frontend component
-  hosts: "{{hosts}}"
+  hosts: frontend
   become: yes
   roles:
-    - "{{role_name}}"
+    - frontend
+
+#- name: setup frontend component
+#  hosts: "{{hosts}}"
+#  become: yes
+#  roles:
+#    - "{{role_name}}"
