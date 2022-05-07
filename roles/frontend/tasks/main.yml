@@ -1,32 +1,33 @@
-- name: Install NGINX
+- name: Install Nginx
   ansible.builtin.yum:
     name: nginx
     state: installed
 
 - name: Download and Extract Frontend
-  include_role:
+  ansible.builtin.include_role:
     name: common
     tasks_from: download
 
-- name: Cleanuop Old HTML Content
-  ansible.builtin.file:
-    path: /usr/share/nginx/html
-    state: absent
+# Note: In src and dest, ending / is very important when you are copying directories
 
 - name: Copy the frontend content to nginx path
   ansible.builtin.copy:
     src: /tmp/frontend-main/static/
-    dest: /usr/share/nginx/html
+    dest: /usr/share/nginx/html/
     remote_src: yes
 
-- name: Copy Source File
+- name: Copy Roboshop Configuration File
   ansible.builtin.copy:
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
-
+  notify: Restart Nginx
 
 - name: Start Nginx Service
   ansible.builtin.systemd:
     name: nginx
-    state: restarted
+    state: started
     enabled: yes
+
+
+
+
